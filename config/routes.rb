@@ -11,6 +11,6 @@ Rails.application.routes.draw do
   # namespace :v2 do
     # resources :users
   # end 
-  end
+  # end
 
 end
