@@ -1,6 +1,6 @@
-class Api::V1::UserController < ApplicationController
-    before_save {self.email = email.downcase} #downcase before saving an email
-    
+class Api::V1::UsersController < ApplicationController
+    # before_action {self.email = email.downcase} downcase before saving an email
+
 
     def index
         users = User.all 
@@ -8,14 +8,14 @@ class Api::V1::UserController < ApplicationController
     end
 
     def show
-        
+
     end
     
 
     def create
         #searchers for the email if no record is found, creates a record
         #with the given email and username 
-        user =User.create_with(username: params[:username]).find_or_create_by(email: params[:email])
+        user = User.create_with(username: params[:username].downcase).find_or_create_by(email: params[:email].downcase)
 
         if user.save 
             render json: user
