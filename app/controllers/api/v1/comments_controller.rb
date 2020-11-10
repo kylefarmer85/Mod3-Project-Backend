@@ -20,7 +20,7 @@ class Api::V1::CommentsController < ApplicationController
         comment = comment.find(params[:id])
         comment.destroy
 
-        render json: {comment: comment, message: "Don't worry it's gone now."} 
+        render json: {comment: comment, message: "Don't worry it's gone now!"} 
     end
 
     private
