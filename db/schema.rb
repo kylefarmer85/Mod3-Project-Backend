@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_204146) do
 
   create_table "comments", force: :cascade do |t|
     t.string "text"
+    t.string "author"
     t.integer "post_id", null: false
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_204146) do
     t.string "image_url"
     t.string "github_url"
     t.integer "upvote"
+    t.string "author"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :image_url
       t.string :github_url
       t.integer :upvote
+      t.string :author
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
