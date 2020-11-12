@@ -11,7 +11,7 @@ class Api::V1::CommentsController < ApplicationController
         if comment.save 
             render json: comment
         else
-            render json: comment.errors.full_messages 
+            render json: {error: "Comments  require text to be posted."}, status: 403  
         end
  
     end

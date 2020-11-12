@@ -16,13 +16,13 @@ class Api::V1::UsersController < ApplicationController
     def create
         #searchers for the email if no record is found, creates a record
         #with the given email and username 
-        user = User.create_with(username: params[:username].downcase, profile_pic: params[:profile_pic]).find_or_create_by(email: params[:email].downcase)
+        user = User.create_with(profile_pic: params[:profile_pic]).find_or_create_by(email: params[:email].downcase, username: params[:username])
 
         if user.save 
             render json: user
         else
             # render json: user.errors.full_messages
-            render json: {error: "Invalid Login"}, status: 403
+            render json: {error: "Please enter a username and email!"}, status: 403
 
         end
     end

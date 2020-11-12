@@ -16,7 +16,7 @@ class Api::V1::PostsController < ApplicationController
         if post.save 
             render json: post
         else
-            render json: post.errors.full_messages 
+            render json: {error: "Post requires a title and content!"}, status: 403 
         end
 
     end
