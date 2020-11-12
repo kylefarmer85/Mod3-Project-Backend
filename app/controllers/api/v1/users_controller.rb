@@ -21,7 +21,9 @@ class Api::V1::UsersController < ApplicationController
         if user.save 
             render json: user
         else
-            render json: user.errors.full_messages 
+            # render json: user.errors.full_messages
+            render json: {error: "Invalid Login"}, status: 403
+
         end
     end
     
