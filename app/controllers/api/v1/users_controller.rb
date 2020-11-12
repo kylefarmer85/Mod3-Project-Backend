@@ -16,7 +16,7 @@ class Api::V1::UsersController < ApplicationController
     def create
         #searchers for the email if no record is found, creates a record
         #with the given email and username 
-        user = User.create_with(username: params[:username].downcase).find_or_create_by(email: params[:email].downcase)
+        user = User.create_with(username: params[:username].downcase, profile_pic: params[:profile_pic]).find_or_create_by(email: params[:email].downcase)
 
         if user.save 
             render json: user
