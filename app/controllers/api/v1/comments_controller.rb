@@ -17,9 +17,9 @@ class Api::V1::CommentsController < ApplicationController
     end
     
     def destroy
-        comment = comment.find(params[:id])
+        comment = Comment.find(params[:id])
+        
         comment.destroy
-
         render json: {comment: comment, message: "Don't worry it's gone now!"} 
     end
 
