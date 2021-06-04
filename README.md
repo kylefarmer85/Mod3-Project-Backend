@@ -10,17 +10,17 @@ Code Yourself is a pure JavaScript SPA where users can create accounts and make 
 
 ## Overview
 
-  This API was created to contain the data used in the Code Yourself app. It stores user data and posts from the frontend: https://github.com/kylefarmer85/mod3-project-frontend
+  This API was created to contain the data used in the Code Yourself app. It stores user's profile data, posts, comments, and likes.
 
 * Ruby version
   - Ruby '2.6.1'
   
-## How to run the API
-  - Clone the frontend and the backend repos
-  - Run `$ bundle install`
+## How to run the application
+  - Clone this backend and the frontend: https://github.com/kylefarmer85/mod3-project-frontend
+  - Navigate to the backend directory and run `$ bundle install`
   - Next, migrate the database `$ rails db:migrate`
   - To start the server run `$ rails s`
   - The API will begin running on localhost:3000
-  - Open the frontend with a live server extension
+  - Navigate to the frontend directory and open with a live server extension
   
   
